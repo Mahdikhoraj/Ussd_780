@@ -1,87 +1,161 @@
-# Ussd_780
-This is command code version of *780#
-📞 USSD Simulator (*780#)
-A terminal-based simulation of a mobile operator's USSD menu (e.g. *780#), built with Python — complete with an interactive graphical dialer UI powered by Textual.
+# 📞 USSD 780 Simulator
 
-The project simulates purchasing internet packages, call charges, and travel tickets (train/bus/plane), as well as checking account balance, all through an interactive text-based menu system.
+A terminal-based simulation of the \*780# USSD service, built with Python.  
+The project includes an interactive graphical dialer powered by Textual and simulates common telecom services such as purchasing internet packages, buying call charges, booking travel tickets, and checking account balance.
 
-✨ Features
-🎹 Graphical dialer interface: an interactive keypad built with Textual for entering the *780# code
-🌐 Internet package purchases: daily, weekly, monthly, and yearly plans with multiple options
-💳 Call charge purchases: hourly, daily, and monthly plans
-🎫 Travel ticket booking: train, bus, and plane, with randomly generated dates/times for the next 6 days
-💰 Account balance display (simulated)
-🔐 Transaction confirmation via second password: generates a random one-time password and validates it before every purchase (OTP-style simulation)
-📝 Transaction history logging: every choice is timestamped and saved to users.txt
-✅ Input validation: phone numbers, card numbers, and menu choices are validated with regex
-⏱️ Smart timeouts: password and card number prompts time out automatically (inputimeout)
-🗂️ Project Structure
+> Note: This project is for educational purposes only and is not connected to any real telecom operator or payment gateway.
+
+---
+
+## ✨ Features
+
+- 📱 Interactive graphical dialer built with Textual
+- 🌐 Purchase internet packages (daily, weekly, monthly, yearly)
+- 📞 Purchase call charge packages (hourly, daily, monthly)
+- 🎫 Book travel tickets (train, bus, and plane)
+- 📅 Randomly generated travel dates and departure times (within the next 6 days)
+- 💰 Simulated account balance
+- 🔐 OTP-style transaction confirmation using a randomly generated second password
+- 📝 Transaction history with timestamps saved to users.txt
+- ✅ Input validation using regular expressions
+- ⏱️ Input timeout for card number and password using inputimeout
+
+---
+
+## 📂 Project Structure
+
+text
 Ussd_main/
-├── main.py               # Entry point; drives the main menu flow
-├── welcome.py             # Welcome message and the graphical dialer UI (DialerApp)
-├── Internets.py           # Internet package definitions and prices
-├── charges.py             # Call charge package definitions and prices
-├── timer.py               # Generates ticket dates/times/prices
-├── option.py              # Purchase logic and balance deduction for each package type
-├── get_value.py           # Collects and validates user input (phone, card, password, choice)
-├── vallidation.py         # Validation helpers (regex for phone, card, etc.)
-├── show.py                # Renders menus in the terminal
-├── show_secend_pass.py    # Generates the random second password (OTP)
-├── files.py                # Reads/writes users.txt and password.txt
-├── style.tcss              # Textual CSS styling for the dialer UI
-├── requirements.txt        # Project dependencies
+│
+├── main.py                # Entry point
+├── welcome.py             # Welcome screen and Textual dialer
+├── Internets.py           # Internet packages
+├── charges.py             # Call charge packages
+├── timer.py               # Ticket date/time generator
+├── option.py              # Purchase logic
+├── get_value.py           # User input collection
+├── vallidation.py         # Regex validation helpers
+├── show.py                # Menu rendering
+├── show_secend_pass.py    # OTP generator
+├── files.py               # Read/write local files
+├── style.tcss             # Textual styles
+├── requirements.txt       # Project dependencies
 └── .gitignore
-users.txt and password.txt are created automatically on first run and are excluded from version control via .gitignore.
 
-⚙️ Requirements
-Python 3.11+ (tested with Python 3.14)
-pip
-🚀 Installation & Usage
-1. Clone the repository
 
+users.txt and password.txt are created automatically on the first run and are ignored by Git.
+
+---
+
+## ⚙️ Requirements
+
+- Python 3.11 or later (tested with Python 3.14)
+- pip
+
+---
+
+## 🚀 Installation
+
+### 1. Clone the repository
+
+bash
 git clone https://github.com/<your-username>/ussd-simulator.git
 cd ussd-simulator/Ussd_main
-2. Create a virtual environment (optional but recommended)
 
+
+### 2. Create a virtual environment (optional)
+
+Windows
+
+bash
 python -m venv .venv
-# Windows
 .venv\Scripts\activate
-# Linux / macOS
+
+
+Linux / macOS
+
+bash
+python -m venv .venv
 source .venv/bin/activate
-3. Install dependencies
 
+
+### 3. Install dependencies
+
+bash
 pip install -r requirements.txt
-4. Run the app
 
+
+### 4. Run the application
+
+bash
 python main.py
-🎮 How to Use
-On launch, a dialer keypad appears; enter *780# and press the 📞 CALL button.
 
-From the main menu, choose one of the following options:
 
-Option	Action
-1	Buy an internet package
-2	Buy call charge
-3	Show balance
-4	Book a travel ticket
-5	View transaction history
-6	Exit
-To complete a purchase, enter your phone number, a 16-digit card number, and the second password displayed in the terminal.
+---
 
-The transaction result and updated balance are shown and logged to users.txt.
+## 🎮 Usage
 
-🛠️ Built With
-Python
-Textual — terminal UI (TUI) framework
-inputimeout — input prompts with a timeout
-📌 Notes
-This project is built purely for learning and simulation purposes — it is not connected to any real telecom operator or payment gateway. Balances and transactions are randomly generated and stored locally.
-Card numbers and passwords are only checked for correct format; no real banking service is involved.
-🤝 Contributing
-Suggestions and bug reports are welcome — feel free to open an issue or pull request.
+1. Launch the application.
+2. Enter ***780#** using the graphical dialer.
+3. Press the 📞 CALL button.
+4. Select one of the available services:
 
-👥 Authors
-Mahdi Khoraj — github.com/Mahdikhoraj
-Marzieh Sarsangy — github.com/Marzieh-82
-📄 License
+| Option | Action |
+|:------:|--------|
+| 1 | Buy an internet package |
+| 2 | Buy call charge |
+| 3 | Check account balance |
+| 4 | Book a travel ticket |
+| 5 | View transaction history |
+| 6 | Exit |
+
+To complete a purchase, provide:
+
+- Phone number
+- 16-digit bank card number
+- Generated OTP (second password)
+
+After each successful transaction:
+
+- The account balance is updated.
+- The transaction is saved to users.txt.
+
+---
+
+## 🛠️ Built With
+
+- Python
+- Textual
+- inputimeout
+- Regular Expressions (Regex)
+
+---
+
+## 📌 Disclaimer
+
+This application is a learning project.
+
+- It is not connected to any real telecom operator.
+- It does not communicate with any real banking or payment system.
+- All balances, transactions, and OTPs are simulated and stored locally.
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and bug reports are welcome.
+
+Feel free to open an Issue or submit a Pull Request.
+
+---
+
+## 👥 Authors
+
+- Mahdi Khoraj — https://github.com/Mahdikhoraj
+- Marzieh Sarsangy — https://github.com/Marzieh-82
+
+---
+
+## 📄 License
+
 This project is licensed under the MIT License.
