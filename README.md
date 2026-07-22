@@ -24,23 +24,26 @@ The project includes an interactive graphical dialer powered by Textual and simu
 
 ## 📂 Project Structure
 
-text
+`text
 Ussd_main/
 │
-├── main.py                # Entry point
-├── welcome.py             # Welcome screen and Textual dialer
-├── Internets.py           # Internet packages
-├── charges.py             # Call charge packages
-├── timer.py               # Ticket date/time generator
-├── option.py              # Purchase logic
-├── get_value.py           # User input collection
-├── vallidation.py         # Regex validation helpers
-├── show.py                # Menu rendering
-├── show_secend_pass.py    # OTP generator
-├── files.py               # Read/write local files
-├── style.tcss             # Textual styles
-├── requirements.txt       # Project dependencies
-└── .gitignore
+├── main.py                  # Application entry point
+├── welcome.py               # Welcome screen and Textual dialer UI
+├── Internets.py             # Internet package definitions
+├── charges.py               # Call charge package definitions
+├── timer.py                 # Generates ticket dates, times, and prices
+├── option.py                # Purchase logic and balance management
+├── get_value.py             # User input collection and processing
+├── vallidation.py           # Input validation helpers (Regex)
+├── show.py                  # Menu display functions
+├── show_secend_pass.py      # Generates OTP/second password
+├── files.py                 # File handling operations
+│
+├── style.tcss               # Textual UI styling
+├── requirements.txt         # Project dependencies
+├── .gitignore               # Ignored files configuration
+│
+└── users.txt                # Created automatically on first run
 
 
 users.txt and password.txt are created automatically on the first run and are ignored by Git.
