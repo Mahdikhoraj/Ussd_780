@@ -24,7 +24,7 @@ The project includes an interactive graphical dialer powered by Textual and simu
 
 ## 📂 Project Structure
 
-`text
+text
 Ussd_main/
 │
 ├── main.py                  # Application entry point
@@ -38,15 +38,15 @@ Ussd_main/
 ├── show.py                  # Menu display functions
 ├── show_secend_pass.py      # Generates OTP/second password
 ├── files.py                 # File handling operations
-│
 ├── style.tcss               # Textual UI styling
 ├── requirements.txt         # Project dependencies
 ├── .gitignore               # Ignored files configuration
-│
-└── users.txt                # Created automatically on first run
+├── users.txt                # Generated automatically on first run
+└── password.txt             # Generated automatically on first run
 
 
-users.txt and password.txt are created automatically on the first run and are ignored by Git.
+Note:
+users.txt and password.txt are created automatically on the first run and are excluded from version control using .gitignore.
 
 ---
 
