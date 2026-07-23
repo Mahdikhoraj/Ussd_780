@@ -1,6 +1,6 @@
 # 📞 USSD 780 Simulator
 
-A terminal-based simulation of the \*780# USSD service, built with Python.  
+A terminal-based simulation of the *780# USSD service, built with Python.
 The project includes an interactive graphical dialer powered by Textual and simulates common telecom services such as purchasing internet packages, buying call charges, booking travel tickets, and checking account balance.
 
 > Note: This project is for educational purposes only and is not connected to any real telecom operator or payment gateway.
@@ -16,33 +16,36 @@ The project includes an interactive graphical dialer powered by Textual and simu
 - 📅 Randomly generated travel dates and departure times (within the next 6 days)
 - 💰 Simulated account balance
 - 🔐 OTP-style transaction confirmation using a randomly generated second password
-- 📝 Transaction history with timestamps saved to users.txt
+- 📝 Transaction history with timestamps saved to `users.txt`
 - ✅ Input validation using regular expressions
-- ⏱️ Input timeout for card number and password using inputimeout
+- ⏱️ Input timeout for card number and password using `inputimeout`
 
 ---
 
-📂 Project Structure
+## 📂 Project Structure
 
-Ussd_main/
+```text
+Ussd_780/
 │
 ├── main.py                  # Application entry point
-├── welcome.py               # Welcome screen and Textual dialer UI
-├── Internets.py             # Internet package definitions
-├── charges.py               # Call charge package definitions
-├── timer.py                 # Generates ticket dates, times, and prices
-├── option.py                # Purchase logic and balance management
-├── get_value.py             # User input collection and processing
-├── vallidation.py           # Input validation helpers (Regex)
-├── show.py                  # Menu display functions
-├── show_secend_pass.py      # Generates OTP/second password
-├── files.py                 # File handling operations
-│
-├── style.tcss               # Textual UI styling
-├── requirements.txt         # Project dependencies
-├── .gitignore               # Ignored files configuration
-│
-└── users.txt                # Created automatically on first run
+├── welcome.py                # Welcome screen and Textual dialer UI
+├── Internets.py               # Internet package definitions
+├── charges.py                 # Call charge package definitions
+├── timer.py                   # Generates ticket dates, times, and prices
+├── option.py                  # Purchase logic and balance management
+├── get_value.py                # User input collection and processing
+├── vallidation.py              # Input validation helpers (Regex)
+├── show.py                     # Menu display functions
+├── show_secend_pass.py           # Generates OTP/second password
+├── files.py                    # File handling operations
+├── style.tcss                  # Textual UI styling
+├── requirements.txt             # Project dependencies
+├── .gitignore                  # Ignored files configuration
+├── users.txt                   # Generated automatically on first run
+└── password.txt                 # Generated automatically on first run
+```
+
+> **Note:** `users.txt` and `password.txt` are created automatically on the first run and are excluded from version control using `.gitignore`.
 
 ---
 
@@ -57,45 +60,45 @@ Ussd_main/
 
 ### 1. Clone the repository
 
-bash
+```bash
 git clone https://github.com/<your-username>/ussd-simulator.git
-cd ussd-simulator/Ussd_main
-
+cd ussd-simulator/Ussd_780
+```
 
 ### 2. Create a virtual environment (optional)
 
-Windows
+**Windows**
 
-bash
+```bash
 python -m venv .venv
 .venv\Scripts\activate
+```
 
+**Linux / macOS**
 
-Linux / macOS
-
-bash
+```bash
 python -m venv .venv
 source .venv/bin/activate
-
+```
 
 ### 3. Install dependencies
 
-bash
+```bash
 pip install -r requirements.txt
-
+```
 
 ### 4. Run the application
 
-bash
+```bash
 python main.py
-
+```
 
 ---
 
 ## 🎮 Usage
 
 1. Launch the application.
-2. Enter ***780#** using the graphical dialer.
+2. Enter **\*780#** using the graphical dialer.
 3. Press the 📞 CALL button.
 4. Select one of the available services:
 
@@ -117,7 +120,7 @@ To complete a purchase, provide:
 After each successful transaction:
 
 - The account balance is updated.
-- The transaction is saved to users.txt.
+- The transaction is saved to `users.txt`.
 
 ---
 
